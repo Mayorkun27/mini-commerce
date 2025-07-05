@@ -1,0 +1,76 @@
+{
+    "products": [
+        {
+        "id": "1",
+        "slug": "wireless-headphones",
+        "name": "Wireless Bluetooth Headphones",
+        "price": 89.99,
+        "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop",
+        "description": "Premium wireless headphones with noise cancellation and 30-hour battery life.",
+        "category": "Electronics"
+        },
+        {
+        "id": "2",
+        "slug": "smart-watch",
+        "name": "Smart Fitness Watch",
+        "price": 199.99,
+        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop",
+        "description": "Track your fitness goals with this advanced smartwatch featuring heart rate monitoring.",
+        "category": "Electronics"
+        },
+        {
+        "id": "3",
+        "slug": "laptop-backpack",
+        "name": "Premium Laptop Backpack",
+        "price": 49.99,
+        "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop",
+        "description": "Durable and stylish laptop backpack with multiple compartments and USB charging port.",
+        "category": "Accessories"
+        },
+        {
+        "id": "4",
+        "slug": "coffee-maker",
+        "name": "Automatic Coffee Maker",
+        "price": 79.99,
+        "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=400&fit=crop",
+        "description": "Programmable coffee maker with built-in grinder and thermal carafe.",
+        "category": "Kitchen"
+        },
+        {
+        "id": "5",
+        "slug": "desk-lamp",
+        "name": "LED Desk Lamp",
+        "price": 34.99,
+        "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+        "description": "Adjustable LED desk lamp with USB charging port and touch controls.",
+        "category": "Home & Office"
+        },
+        {
+        "id": "6",
+        "slug": "wireless-speaker",
+        "name": "Portable Wireless Speaker",
+        "price": 59.99,
+        "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400&h=400&fit=crop",
+        "description": "Waterproof portable speaker with 360-degree sound and 12-hour battery life.",
+        "category": "Electronics"
+        },
+        {
+        "id": "7",
+        "slug": "phone-case",
+        "name": "Protective Phone Case",
+        "price": 24.99,
+        "image": "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=400&fit=crop",
+        "description": "Drop-proof phone case with wireless charging compatibility and card slots.",
+        "category": "Accessories"
+        },
+        {
+        "id": "8",
+        "slug": "yoga-mat",
+        "name": "Premium Yoga Mat",
+        "price": 39.99,
+        "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400&h=400&fit=crop",
+        "description": "Non-slip yoga mat with alignment lines and carrying strap.",
+        "category": "Fitness"
+        }
+    ]
+}
