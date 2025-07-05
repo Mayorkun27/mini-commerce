@@ -12,9 +12,7 @@ interface ProductDetailClientProps {
 }
 
 export default function ProductDetailClient({ params }: ProductDetailClientProps) {
-    console.log('params', params)
-    console.log('params value', params?.value)
-    console.log('params slug', params.value.slug)
+  console.log('params', params)
   const router = useRouter()
   const addToCart = useCartStore((state) => state.addToCart)
   

@@ -131,3 +131,54 @@ export default function CheckoutSuccessPage() {
     </div>
   )
 }
+
+
+// 'use client'
+
+// import { useSearchParams } from 'next/navigation'
+// import Link from 'next/link'
+// import { CheckCircleIcon } from '@heroicons/react/24/solid'
+
+// export default function CheckoutSuccessPage() {
+//   const searchParams = useSearchParams()
+//   const orderId = searchParams.get('orderId')
+
+//   return (
+//     <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+//       <div className="max-w-md w-full">
+//         <div className="bg-white rounded-lg shadow-md p-8 text-center">
+//           <div className="mb-6">
+//             <CheckCircleIcon className="h-16 w-16 text-green-500 mx-auto mb-4" />
+//             <h1 className="text-2xl font-bold text-gray-900 mb-2">
+//               Order Confirmed!
+//             </h1>
+//             <p className="text-gray-600">
+//               Thank you for your purchase. Your order has been successfully placed.
+//             </p>
+//           </div>
+
+//           {orderId && (
+//             <div className="bg-gray-50 rounded-lg p-4 mb-6">
+//               <p className="text-sm text-gray-600 mb-1">Order ID</p>
+//               <p className="font-mono text-lg font-semibold text-gray-900">
+//                 {orderId}
+//               </p>
+//             </div>
+//           )}
+
+//           <div className="space-y-3">
+//             <Link
+//               href="/"
+//               className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors block"
+//             >
+//               Continue Shopping
+//             </Link>
+//             <p className="text-sm text-gray-500">
+//               You'll receive an email confirmation shortly.
+//             </p>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   )
+// }
