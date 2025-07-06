@@ -29,10 +29,9 @@ export default function CheckoutSuccessClient() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* The full success UI here, like you already had */}
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">
-          <div className="bg-white rounded-lg shadow-md md:p-8 p-4 text-center">
+          <div className="bg-white shadow-md md:p-8 p-4 text-center">
             <div className="mx-auto mb-6">
               <CheckCircleIcon className="h-24 w-24 text-green-500 mx-auto" />
             </div>
@@ -57,6 +56,30 @@ export default function CheckoutSuccessClient() {
                   <span className="text-gray-600">Status:</span>
                   <span className="text-green-600 font-medium">Confirmed</span>
                 </div>
+              </div>
+            </div>
+            {/* What is Next */}
+            <div className="text-left bg-blue-50 rounded-lg p-6 mb-6">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                    What&apos;s Next?
+                </h3>
+                <div className="space-y-2 text-sm text-gray-700">
+                  <div className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span>You will receive an email confirmation shortly</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span>Your order will be processed within 1-2 business days</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span>You&apos;ll receive tracking information once your order ships</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span>Estimated delivery: 3-5 business days</span>
+                  </div>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
