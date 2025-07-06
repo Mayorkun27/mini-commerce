@@ -3,11 +3,12 @@ import { fetchProductBySlug } from '@/lib/products'
 import ProductDetailClient from './client'
 
 interface ProductPageProps {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
-  const product = await fetchProductBySlug(params.slug)
+  const { slug } = await params
+  const product = await fetchProductBySlug(slug)
   
   if (!product) {
     return {
@@ -42,6 +43,8 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   }
 }
 
-export default function ProductPage({ params }: ProductPageProps) {
-  return <ProductDetailClient params={params} />
+export default async function ProductPage({ params }: ProductPageProps) {
+  const resolvedParams = await params
+  
+  return <ProductDetailClient params={resolvedParams} />
 }

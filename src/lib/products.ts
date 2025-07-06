@@ -25,5 +25,7 @@ export async function fetchProducts(): Promise<Product[]> {
 
 export async function fetchProductBySlug(slug: string): Promise<Product | null> {
   const products = await fetchProducts()
-  return products.find(product => product.slug === slug) || null
+  const product = products.find(product => product.slug === slug)
+  
+  return product || null
 }

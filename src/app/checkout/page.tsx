@@ -4,6 +4,7 @@ import { useCartStore } from '@/app/store/cart-store'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
+import { CheckoutItemCard } from '@/components/CheckoutItemCard'
 
 interface CheckoutForm {
   firstName: string
@@ -95,7 +96,7 @@ export default function CheckoutPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Checkout Form */}
-          <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="bg-white shadow-md p-6">
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Personal Information */}
               <div>
@@ -103,7 +104,7 @@ export default function CheckoutPage() {
                   Personal Information
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
+                  <div className='mb-3'>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       First Name
                     </label>
@@ -113,10 +114,10 @@ export default function CheckoutPage() {
                       value={formData.firstName}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="input"
                     />
                   </div>
-                  <div>
+                  <div className='mb-3'>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Last Name
                     </label>
@@ -126,7 +127,7 @@ export default function CheckoutPage() {
                       value={formData.lastName}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="input"
                     />
                   </div>
                 </div>
@@ -141,7 +142,7 @@ export default function CheckoutPage() {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="input"
                     />
                   </div>
                   <div>
@@ -154,7 +155,7 @@ export default function CheckoutPage() {
                       value={formData.phone}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="input"
                     />
                   </div>
                 </div>
@@ -176,7 +177,7 @@ export default function CheckoutPage() {
                       value={formData.address}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="input"
                     />
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -190,7 +191,7 @@ export default function CheckoutPage() {
                         value={formData.city}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="input"
                       />
                     </div>
                     <div>
@@ -203,7 +204,7 @@ export default function CheckoutPage() {
                         value={formData.state}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="input"
                       />
                     </div>
                     <div>
@@ -216,7 +217,7 @@ export default function CheckoutPage() {
                         value={formData.zipCode}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="input"
                       />
                     </div>
                   </div>
@@ -240,7 +241,7 @@ export default function CheckoutPage() {
                       onChange={handleInputChange}
                       placeholder="1234 5678 9012 3456"
                       required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="input"
                     />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
@@ -255,7 +256,7 @@ export default function CheckoutPage() {
                         onChange={handleInputChange}
                         placeholder="MM/YY"
                         required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="input"
                       />
                     </div>
                     <div>
@@ -269,7 +270,7 @@ export default function CheckoutPage() {
                         onChange={handleInputChange}
                         placeholder="123"
                         required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="input"
                       />
                     </div>
                   </div>
@@ -283,7 +284,7 @@ export default function CheckoutPage() {
                       value={formData.cardName}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="input"
                     />
                   </div>
                 </div>
@@ -293,7 +294,7 @@ export default function CheckoutPage() {
               <button
                 type="submit"
                 disabled={isProcessing}
-                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed font-medium"
+                className="w-full bg-black text-white py-3 px-6 disabled:opacity-50 disabled:cursor-not-allowed font-medium"
               >
                 {isProcessing ? 'Processing...' : `Place Order - $${totalPrice.toFixed(2)}`}
               </button>
@@ -301,37 +302,19 @@ export default function CheckoutPage() {
           </div>
 
           {/* Order Summary */}
-          <div className="bg-white rounded-lg shadow-md p-6 h-fit sticky top-8">
+          <div className="bg-white shadow-md p-6 h-fit sticky top-18">
             <h2 className="text-xl font-semibold text-gray-900 mb-4">
               Order Summary
             </h2>
             
             <div className="space-y-4 mb-6">
               {items.map((item) => (
-                <div key={item.product.id} className="flex items-center space-x-3">
-                  <div className="w-16 h-16 relative flex-shrink-0">
-                    <Image
-                      src={item.product.image}
-                      alt={item.product.name}
-                      fill
-                      className="object-cover rounded-lg"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="font-medium text-gray-900">{item.product.name}</h3>
-                    <p className="text-sm text-gray-600">Qty: {item.quantity}</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="font-medium text-gray-900">
-                      ${(item.product.price * item.quantity).toFixed(2)}
-                    </p>
-                  </div>
-                </div>
+                <CheckoutItemCard key={item.product.id} item={item} />
               ))}
             </div>
 
             <div className="border-t pt-4">
-              <div className="flex justify-between items-center text-lg font-semibold">
+              <div className="flex justify-between items-center text-lg font-semibold text-gray-900">
                 <span>Total</span>
                 <span className="text-blue-600">${totalPrice.toFixed(2)}</span>
               </div>

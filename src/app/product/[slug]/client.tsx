@@ -12,14 +12,15 @@ interface ProductDetailClientProps {
 }
 
 export default function ProductDetailClient({ params }: ProductDetailClientProps) {
-  console.log('params', params)
   const router = useRouter()
   const addToCart = useCartStore((state) => state.addToCart)
   
-  const { data: product, isLoading, isError } = useQuery({
+  const { data: product, isLoading, isError, error } = useQuery({
     queryKey: ['product', params.slug],
     queryFn: () => fetchProductBySlug(params.slug),
   })
+
+  console.log('Query result:', { product, isLoading, isError, error })
 
   if (isLoading) {
     return (
@@ -36,7 +37,9 @@ export default function ProductDetailClient({ params }: ProductDetailClientProps
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Product Not Found {params.slug}</h1>
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">
+            Product Not Found
+          </h1>
           <p className="text-gray-600 mb-6">The product you're looking for doesn't exist.</p>
           <button
             onClick={() => router.push('/')}
