@@ -27,7 +27,7 @@ A modern, responsive e-commerce application built with Next.js 14, TypeScript, a
 ## 📦 Installation
 
 1. **Clone the repository**
-   git clone https://github.com/yourusername/mini-commerce.git
+   ```bash git clone https://github.com/yourusername/mini-commerce.git```
    
    cd mini-commerce
 
