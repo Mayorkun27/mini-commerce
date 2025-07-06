@@ -14,7 +14,6 @@ export const useCartStore = create<CartState>()(
         )
 
         if (existingItem) {
-          // If item exists, increase quantity
           set({
             items: currentItems.map((item) =>
               item.product.id === product.id
@@ -23,7 +22,6 @@ export const useCartStore = create<CartState>()(
             ),
           })
         } else {
-          // If new item, add to cart
           set({
             items: [...currentItems, { product, quantity: 1 }],
           })
@@ -38,7 +36,6 @@ export const useCartStore = create<CartState>()(
 
       updateQuantity: (productId: string, quantity: number) => {
         if (quantity <= 0) {
-          // If quantity is 0 or negative, remove item
           get().removeFromCart(productId)
           return
         }
@@ -68,8 +65,8 @@ export const useCartStore = create<CartState>()(
       },
     }),
     {
-      name: 'cart-storage', // localStorage key
-      partialize: (state) => ({ items: state.items }), // Only persist items
+      name: 'cart-storage',
+      partialize: (state) => ({ items: state.items }),
     }
   )
 )
