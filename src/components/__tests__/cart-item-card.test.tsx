@@ -47,7 +47,7 @@ describe("CartItemCard", () => {
     expect(getByText("$19.99")).toBeInTheDocument();
     expect(getByText("Test Category")).toBeInTheDocument();
     expect(getByTestId("quantity")).toHaveTextContent("2");
-    expect(getByTestId("total-mobile")).toHaveTextContent("$39.98"); // Total
+    expect(getByTestId("total-mobile")).toHaveTextContent("$39.98");
   });
 
   it("calls updateQuantity on + and -", () => {
@@ -59,11 +59,9 @@ describe("CartItemCard", () => {
       />
     );
 
-    // '+' button
     fireEvent.click(getByTitle("Increase Quantity"));
     expect(mockUpdateQuantity).toHaveBeenCalledWith("1", 3);
 
-    // '-' button
     fireEvent.click(getByTitle("Decrease Quantity"));
     expect(mockUpdateQuantity).toHaveBeenCalledWith("1", 1);
   });
