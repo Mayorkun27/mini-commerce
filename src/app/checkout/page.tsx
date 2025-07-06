@@ -41,7 +41,6 @@ export default function CheckoutPage() {
     cardName: ''
   })
 
-  // Redirect if cart is empty
   if (items.length === 0) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -75,16 +74,12 @@ export default function CheckoutPage() {
     e.preventDefault()
     setIsProcessing(true)
 
-    // Simulate payment processing
     await new Promise(resolve => setTimeout(resolve, 2000))
-
-    // Generate random order ID
+    
     const orderId = `ORD-${Date.now()}-${Math.random().toString(36).substr(2, 9).toUpperCase()}`
 
-    // Clear cart
     clearCart()
 
-    // Redirect to success page
     router.push(`/checkout/success?orderId=${orderId}`)
   }
 
