@@ -20,13 +20,11 @@ export default function ProductDetailClient({ params }: ProductDetailClientProps
     queryFn: () => fetchProductBySlug(params.slug),
   })
 
-  console.log('Query result:', { product, isLoading, isError, error })
-
   if (isLoading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-black"></div>
           <p className="mt-4 text-gray-600">Loading product...</p>
         </div>
       </div>
@@ -43,7 +41,7 @@ export default function ProductDetailClient({ params }: ProductDetailClientProps
           <p className="text-gray-600 mb-6">The product you&apos;re looking for doesn&apos;t exist.</p>
           <button
             onClick={() => router.push('/')}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700"
+            className="bg-black text-white px-6 py-3 cursor-pointer"
           >
             Go Back Home
           </button>
@@ -68,7 +66,7 @@ export default function ProductDetailClient({ params }: ProductDetailClientProps
         </button>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="aspect-square relative bg-white rounded-lg overflow-hidden">
+          <div className="aspect-square relative bg-white overflow-hidden">
             <Image
               src={product.image}
               alt={product.name}
@@ -79,7 +77,7 @@ export default function ProductDetailClient({ params }: ProductDetailClientProps
             />
           </div>
 
-          <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="bg-white shadow-md p-6">
             <div className="mb-4">
               <span className="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded">
                 {product.category}
@@ -105,7 +103,7 @@ export default function ProductDetailClient({ params }: ProductDetailClientProps
 
             <button
               onClick={handleAddToCart}
-              className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors font-medium text-lg"
+              className="w-full bg-black text-white py-3 px-6 transition-colors font-medium text-lg cursor-pointer"
             >
               Add to Cart
             </button>
