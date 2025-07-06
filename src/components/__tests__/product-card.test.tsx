@@ -12,7 +12,8 @@ jest.mock("next/navigation", () => ({
 
 jest.mock("next/image", () => ({
   __esModule: true,
-  default: ({ fill, ...props }: any) => React.createElement("img", props),
+  default: (props: React.ImgHTMLAttributes<HTMLImageElement>) =>
+    React.createElement("img", props),
 }));
 
 const mockAddToCart = jest.fn();
