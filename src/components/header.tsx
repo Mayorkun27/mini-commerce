@@ -17,7 +17,7 @@ export function Header() {
     };
 
     return (
-        <header className="bg-white shadow-sm border-b sticky top-0 z-50">
+        <header className="bg-white shadow-sm border-b border-gray-300 sticky top-0 z-50">
             <div className="container mx-auto px-4 py-4">
                 <div className="flex items-center justify-between">
                     <Link
