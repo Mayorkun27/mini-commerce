@@ -75,10 +75,10 @@
                 </div>
               </div>
 
-              {/* What's Next */}
+              {/* What is Next */}
               <div className="text-left bg-blue-50 rounded-lg p-6 mb-6">
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  What's Next?
+                  What&apos;s Next?
                 </h3>
                 <div className="space-y-2 text-sm text-gray-700">
                   <div className="flex items-start">
@@ -91,7 +91,7 @@
                   </div>
                   <div className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span>You'll receive tracking information once your order ships</span>
+                    <span>You&apos;ll receive tracking information once your order ships</span>
                   </div>
                   <div className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-blue-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
