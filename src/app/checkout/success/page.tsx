@@ -13,7 +13,6 @@
     useEffect(() => {
       const orderIdParam = searchParams.get('orderId')
       if (!orderIdParam) {
-        // Redirect to home if no order ID
         router.push('/')
         return
       }
