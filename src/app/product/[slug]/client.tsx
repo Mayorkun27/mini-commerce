@@ -15,7 +15,7 @@ export default function ProductDetailClient({ params }: ProductDetailClientProps
   const router = useRouter()
   const addToCart = useCartStore((state) => state.addToCart)
   
-  const { data: product, isLoading, isError, error } = useQuery({
+  const { data: product, isLoading, isError } = useQuery({
     queryKey: ['product', params.slug],
     queryFn: () => fetchProductBySlug(params.slug),
   })
