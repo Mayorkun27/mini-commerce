@@ -1,9 +1,7 @@
 'use client'
 
 import { useCartStore } from '@/app/store/cart-store'
-import Image from 'next/image'
 import Link from 'next/link'
-import { MinusIcon, PlusIcon, TrashIcon } from '@heroicons/react/24/outline'
 import { CartItemCard } from '@/components/CartItemCard'
 
 export default function CartPage() {
