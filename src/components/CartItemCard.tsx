@@ -91,6 +91,7 @@ export function CartItemCard({
           </div>
         </div>
       </div>
+      {/* Item Total & Quantity Controls - M  */}
       <div className="text-right md:hidden flex items-center justify-between mt-4">
         <div
           data-testid="total-mobile"
