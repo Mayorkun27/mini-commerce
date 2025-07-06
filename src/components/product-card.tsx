@@ -13,11 +13,10 @@ export function ProductCard({ product }: ProductCardProps) {
   const [showFeedback, setShowFeedback] = useState(false);
 
   const handleAddToCart = (e: React.MouseEvent) => {
-    e.preventDefault(); // Prevent Link navigation
+    e.preventDefault();
     addToCart(product);
     setShowFeedback(true);
     
-    // Hide feedback after 2 seconds
     setTimeout(() => {
       setShowFeedback(false);
     }, 1000);
